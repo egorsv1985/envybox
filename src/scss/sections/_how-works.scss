@@ -1,0 +1,6 @@
+.how-works__item:first-child{
+	.how-works__box-img::before,
+	.how-works__box-img::after{
+		display: none;
+	}
+}
