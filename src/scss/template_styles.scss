@@ -1,15 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import './components/**.*scss';
 @import './blocks/**.*scss';
 @import './base/**.*scss';
 @import './libs/**.*scss';
 @import './pages/**.*scss';
 @import './sections/**.*scss';
-.container {
-	padding-inline: 8px;
-}
 // *, *::after, *::before {
 // 	border: 1px solid red;
 // }
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+@media (min-width: 769px) {
+	.container {
+		width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+body{
+	background-color:#F3F7FC;
+}

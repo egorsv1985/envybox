@@ -1,4 +1,4 @@
-.advantages {
+.how-work {
 	&__title{	
     font-size: 54px;
     font-weight: 900;
@@ -41,7 +41,7 @@
 	
 }
 @media (min-width: 769px) {
-	.advantages__list {
+	.how-work__list {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
