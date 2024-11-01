@@ -2122,7 +2122,21 @@ audio::-webkit-media-controls-panel {
   color: #ffffff;
   border: solid 2px #1a6ee3;
 }
-
+/*Конструктор сайтов*/
+.tarif_constructor {
+  background-color: #171717;
+}
+.constructor_page .header_tab{
+  
+  background-color: #171717;
+}
+.constructor_page .header_tab::after{
+  /* background-image: url(../images/bg-constructor.png); */
+  
+}
+.constructor_page .header_menu_two{
+  display:none;
+}
 /*Тарифы на обратный звонок*/
 .tarif {
   margin-bottom: 80px;
