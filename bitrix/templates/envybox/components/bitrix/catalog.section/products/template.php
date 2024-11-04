@@ -55,6 +55,8 @@ foreach ($arResult['ITEMS'] as $item) {
         require "template_parts/method_credit_block.php";
     } elseif ($typeBlock == 'uniq_func_block') {
         require "template_parts/unic_func_block.php";
+    } elseif ($typeBlock == 'saving') {
+        require "template_parts/saving.php";
     } elseif ($typeBlock == 'chat_blocks') {
         require "template_parts/chat_blocks.php";
     } elseif ($typeBlock == 'new_chat_blocks') {

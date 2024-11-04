@@ -2,36 +2,42 @@
 $blockID = $item['ID'];
 $block1 = array(
     'IMG' => $props['UNIQ_ICON_1']['VALUE'],
+    'IMAGE' => $props['UNIQ_IMAGE_1']['VALUE'],
     'TITLE' => $props['UNIQ_TITLE_1']['VALUE'],
     'TEXT' => $props['UNIQ_TEXT_1']['~VALUE'],
     'ID' => 'uniqblock1_' . $blockID,
 );
 $block2 = array(
     'IMG' => $props['UNIQ_ICON_2']['VALUE'],
+    'IMAGE' => $props['UNIQ_IMAGE_2']['VALUE'],
     'TITLE' => $props['UNIQ_TITLE_2']['VALUE'],
     'TEXT' => $props['UNIQ_TEXT_2']['~VALUE'],
     'ID' => 'uniqblock2_' . $blockID,
 );
 $block3 = array(
     'IMG' => $props['UNIQ_ICON_3']['VALUE'],
+    'IMAGE' => $props['UNIQ_IMAGE_3']['VALUE'],
     'TITLE' => $props['UNIQ_TITLE_3']['VALUE'],
     'TEXT' => $props['UNIQ_TEXT_3']['~VALUE'],
     'ID' => 'uniqblock3_' . $blockID,
 );
 $block4 = array(
     'IMG' => $props['UNIQ_ICON_4']['VALUE'],
+    'IMAGE' => $props['UNIQ_IMAGE_4']['VALUE'],
     'TITLE' => $props['UNIQ_TITLE_4']['VALUE'],
     'TEXT' => $props['UNIQ_TEXT_4']['~VALUE'],
     'ID' => 'uniqblock4_' . $blockID,
 );
 $block5 = array(
     'IMG' => $props['UNIQ_ICON_5']['VALUE'],
+    'IMAGE' => $props['UNIQ_IMAGE_5']['VALUE'],
     'TITLE' => $props['UNIQ_TITLE_5']['VALUE'],
     'TEXT' => $props['UNIQ_TEXT_5']['~VALUE'],
     'ID' => 'uniqblock5_' . $blockID,
 );
 $block6 = array(
     'IMG' => $props['UNIQ_ICON_6']['VALUE'],
+    'IMAGE' => $props['UNIQ_IMAGE_6']['VALUE'],
     'TITLE' => $props['UNIQ_TITLE_6']['VALUE'],
     'TEXT' => $props['UNIQ_TEXT_6']['~VALUE'],
     'ID' => 'uniqblock6_' . $blockID,
@@ -50,7 +56,7 @@ $block8 = array(
 );
 $blocks = array($block1, $block2, $block3, $block4, $block5, $block6, $block7, $block8);
 ?>
-<div class="dop_fichi" id="advantages">
+<div class="dop_fichi" id="advantages-<?= $item['ID'] ?>">
     <div class="container">
         <h2 class="dop_fichi_header">
             <?= $item['NAME'] ?>
@@ -121,9 +127,18 @@ $blocks = array($block1, $block2, $block3, $block4, $block5, $block6, $block7, $
                  <a href="#uniqblock2_910" class="cloud_link">> 500 шаблонов</a>
                  <a href="#uniqblock1_915" class="cloud_link">8 дней бесплатно</a>                 
                  <a href="#uniqblock2_915" class="cloud_link">регистрация домена</a>                 
-                 <a href="#uniqblock5_915" class="cloud_link">мобильная версия</a>                
-                       
-                                 
+                 <a href="#uniqblock5_915" class="cloud_link">мобильная версия</a>
+                </div>';
+                break;
+            case '917':
+                echo '<div class="tag_cloud">
+                 <a href="#uniqblock1_917" class="cloud_link">landing page</a>
+                 <a href="#uniqblock1_917" class="cloud_link">>интернет магазин</a>
+                 <a href="#uniqblock3_917" class="cloud_link">регистрация домена</a>                 
+                 <a href="#uniqblock4_917" class="cloud_link">интеграции</a>                 
+                 <a href="#uniqblock5_917" class="cloud_link">аналитика</a>
+                 <a href="#uniqblock6_917" class="cloud_link">база данных</a>
+                 <a href="#uniqblock7_915" class="cloud_link">техническая поддержка</a>
                 </div>';
                 break;
             default:
@@ -132,24 +147,34 @@ $blocks = array($block1, $block2, $block3, $block4, $block5, $block6, $block7, $
         }
         ?>
         <div class="dop_fichi_wr">
+
+
+
             <? $count = 0; ?>
             <? foreach ($blocks as $block) { ?>
                 <? $count++; ?>
                 <? if (!empty($block['TITLE'])) { ?>
                     <div class="<?= $props['UNIQ_FULL_WIDTH']['VALUE_XML_ID'] == 'YES' && $count == 1 ? 'fichi_col_100' : 'fichi_col_50' ?>">
                         <div>
-                            <div class="fichi_header_wr">
-                                <div class="fichi_img_wr" style="background-color: rgba(155, 123, 224, 0.1);">
-                                    <? $img = CFile::GetPath($block['IMG']); ?>
-                                    <img src="<?= $img ?>" alt="">
+                            <div class="">
+                                <div class="fichi_header_wr">
+                                    <div class="fichi_img_wr" style="background-color: rgba(155, 123, 224, 0.1);">
+                                        <? $img = CFile::GetPath($block['IMG']); ?>
+                                        <img src="<?= $img ?>" alt="">
+                                    </div>
+                                    <h3 id="<?= $block['ID']; ?>" class="fichi_name">
+                                        <?= $block['TITLE'] ?>
+                                    </h3>
                                 </div>
-                                <h3 id="<?= $block['ID']; ?>" class="fichi_name">
-                                    <?= $block['TITLE'] ?>
-                                </h3>
+                                <p class="fichi_text">
+                                    <?= $block['TEXT'] ?>
+                                </p>
                             </div>
-                            <p class="fichi_text">
-                                <?= $block['TEXT'] ?>
-                            </p>
+
+                            <div class="fitchi_box_img">
+                                <? $image = CFile::GetPath($block['IMAGE']); ?>
+                                <img src="<?= $image ?>" alt="">
+                            </div>
                         </div>
                     </div>
                 <? } ?>

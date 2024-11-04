@@ -1,7 +1,9 @@
-<div class="form_registration">
+<? $cur_page_no_index = $GLOBALS['APPLICATION']->GetCurPage(false); ?>
+<div class="form_registration" id="form_registration-<?= $item['ID'] ?>">
     <div class="container">
         <div class="form_registration_wr">
             <p class="form_registration_title">
+
                 <?= $item['NAME'] ?>
             </p>
             <p class="form_registration_text">
@@ -21,4 +23,13 @@
     <img src="<?= SITE_TEMPLATE_PATH ?>/images/form_icon/line-bluelight.svg" style="transform: rotate(90deg);" alt="" class="form_registration_line2">
     <img src="<?= SITE_TEMPLATE_PATH ?>/images/form_icon/zigzag-purple.svg" alt="" class="form_registration_zigzag1">
     <img src="<?= SITE_TEMPLATE_PATH ?>/images/form_icon/zigzag-blue-big.svg" alt="" class="form_registration_zigzag2">
+
+    <?
+    $url = $_SERVER['REQUEST_URI'];
+    if (stristr($url, 'konstruktor-saytov') !== FALSE) { ?>
+
+
+        <img src="<?= SITE_TEMPLATE_PATH ?>/images/bg-reg.png" alt="" class="form_registration_bg">
+
+    <?  }; ?>
 </div>
